@@ -1,19 +1,28 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+
+
 
 function Login(props){
-    console.log(props)
+    
     const usernameRef = useRef();
     const passwordRef = useRef();
     
-    const submit = ()=>{
-        axios.post('http://localhost:5000/login',
-        {
-         username: usernameRef.current.value,
-         password: passwordRef.current.value   
-        })
+    const submit = (e)=>{
+        e.preventDefault();
+        axios.post('http://localhost:5000/api/login',{
+            username: usernameRef.current.value,
+            password: passwordRef.current.value
         
+        }).then(res=>{
+            localStorage.setItem('token', res.data.payload)
+            
+            
+        }).catch(err=>{
+          
+            alert(err.message)
+            
+        })
        
     }
     return(
