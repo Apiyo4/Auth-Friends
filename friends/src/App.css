@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.friend{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.friends{
+  font-size: 1.4rem;
+  width: 30%;
+}
+span{
+  padding-left: 8px ;
+ 
+}
+form{
+  margin-top: 3%;
+}
+button, br{
+  margin-top: 1%;
+}
+input, button{
+  font-size: 2rem;
+}
+.marginRight{
+  margin-left: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.blue{
+  color: blue;
+}
