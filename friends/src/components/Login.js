@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import axios from 'axios';
-
+import {Link} from 'react-router-dom';
 
 
 function Login(props){
@@ -27,13 +27,20 @@ function Login(props){
     }
     return(
         <div>
+            <div className='marginRight'>
+            <Link to= '/friends'>Friends</Link>
+            </div>
            <form onSubmit={submit}> 
             <label>Username:
+                <span>
                 <input type='text' ref ={usernameRef} />
+                </span>
             </label>
             <br/>
             <label>Password:
+                <span>
                 <input type='text' ref={passwordRef}/>
+                </span>
             </label>
             <br/>
             

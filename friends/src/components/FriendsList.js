@@ -26,19 +26,30 @@ function FriendsList(props){
             }
         )
     }, [])
+    const logout = ()=>{
+        localStorage.removeItem('token');
+        props.history.push('/')
+    }
 
     return(
+
         <div>
+            <div className='marginRight '>
+            
             <Link to= '/friends/add'>Add a friend</Link>
+            <div className='blue' onClick={logout}>Log out</div>
+            </div>
             { console.log(friends)}
+            <div className='friend'>
             {friends.map(friend=>{
                 return(
-                    <div key ={friend.id}>
+                    <div className='friends' key ={friend.id}>
                         <h2>{friend.name}</h2>
                         <p>Age: {friend.age}</p>
                         <p>Email: {friend.email}</p>
                     </div>)
             })}
+            </div>
         </div>
 
     )
