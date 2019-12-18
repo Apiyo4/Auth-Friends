@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../axios';
+import {Link} from 'react-router-dom';
 
 function FriendsList(props){
   
@@ -28,6 +29,7 @@ function FriendsList(props){
 
     return(
         <div>
+            <Link to= '/friends/add'>Add a friend</Link>
             { console.log(friends)}
             {friends.map(friend=>{
                 return(
